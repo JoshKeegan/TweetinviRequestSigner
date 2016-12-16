@@ -45,6 +45,7 @@ namespace TweetinviRequestSignerDemo
 
             // Set up Remote Authorisation
             TwitterQueryRemoteAuth.Register();
+            Requester.ServerUrl = "http://localhost:50154/";
 
             // Set up credentials as you usually would for Tweetinvi, just using null for the consumer secret
             Auth.SetUserCredentials(CONSUMER_KEY, null,

@@ -10,10 +10,20 @@ using TweetinviRequestSignerClient.Exceptions;
 
 namespace TweetinviRequestSignerClient
 {
-    internal static class Requester
+    public static class Requester
     {
-        // Constants
-        private const string REQUEST_SIGNER_SERVER_URL = "http://localhost:50154/";
+        #region Settings
+
+        public static string ServerUrl;
+
+        [ThreadStatic]
+        public static string CurrentThreadServerUrl;
+
+        private static string threadAwareServerUrl => CurrentThreadServerUrl ?? ServerUrl;
+
+        #endregion
+
+        #region Internal Methods
 
         internal static T MakePostJson<T>(string endPoint, object data)
         {
@@ -23,7 +33,10 @@ namespace TweetinviRequestSignerClient
             return responseObj;
         }
 
-        // Private methods
+        #endregion
+
+        #region Private Methods
+
         private static HttpWebRequest createPostJsonRequest(string endPoint, object data)
         {
             HttpWebRequest req = createBlankRequest(endPoint);
@@ -48,7 +61,23 @@ namespace TweetinviRequestSignerClient
 
         private static HttpWebRequest createBlankRequest(string endPoint)
         {
-            return (HttpWebRequest) WebRequest.Create(REQUEST_SIGNER_SERVER_URL + endPoint);
+            // Validation
+            if (endPoint == null)
+            {
+                throw new ArgumentNullException(nameof(endPoint));
+            }
+
+            // Check that a Server URL has been set
+            string serverUrl = threadAwareServerUrl;
+            if (serverUrl == null)
+            {
+                throw new InvalidOperationException("Must set a Server URL before making a request");
+            }
+
+            // Ensure that the server URL has a trailing / before concatenating with the end point
+            string epUrl = serverUrl + (serverUrl[serverUrl.Length - 1] != '/' ? "/" : "") + endPoint;
+
+            return (HttpWebRequest) WebRequest.Create(epUrl);
         }
 
         private static string runRequest(HttpWebRequest req)
@@ -103,5 +132,7 @@ namespace TweetinviRequestSignerClient
             T responseObj = JsonConvert.DeserializeObject<T>(rawResponseJson);
             return responseObj;
         }
+
+        #endregion
     }
 }

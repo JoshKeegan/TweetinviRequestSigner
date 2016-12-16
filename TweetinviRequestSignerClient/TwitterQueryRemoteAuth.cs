@@ -18,7 +18,9 @@ namespace TweetinviRequestSignerClient
     {
         #region Constructors
 
-        public TwitterQueryRemoteAuth(string queryUrl, HttpMethod httpMethod) : base(queryUrl, httpMethod)
+        // ReSharper disable once InconsistentNaming
+        //  Autofac requires variable names to match, not just the method signature :s
+        public TwitterQueryRemoteAuth(string queryURL, HttpMethod httpMethod) : base(queryURL, httpMethod)
         {
             // Get the credentials to use to sign this request
             ITwitterCredentials twitterCredentials = TwitterCredentials;
@@ -31,7 +33,7 @@ namespace TweetinviRequestSignerClient
             // Send a request to the TweetinviRequestSigner server to sign this request
             VmRequestToSign signReq = new VmRequestToSign()
             {
-                Url = queryUrl,
+                Url = queryURL,
                 Method = httpMethod,
                 ConsumerKey = twitterCredentials.ConsumerKey,
                 ClientToken = twitterCredentials.AccessToken,
