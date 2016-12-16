@@ -18,7 +18,7 @@ namespace TweetinviRequestSignerClient
     {
         #region Constructors
 
-        public TwitterQueryRemoteAuth(string queryURL, HttpMethod httpMethod) : base(queryURL, httpMethod)
+        public TwitterQueryRemoteAuth(string queryUrl, HttpMethod httpMethod) : base(queryUrl, httpMethod)
         {
             // Get the credentials to use to sign this request
             ITwitterCredentials twitterCredentials = TwitterCredentials;
@@ -31,7 +31,7 @@ namespace TweetinviRequestSignerClient
             // Send a request to the TweetinviRequestSigner server to sign this request
             VmRequestToSign signReq = new VmRequestToSign()
             {
-                Url = queryURL,
+                Url = queryUrl,
                 Method = httpMethod,
                 ConsumerKey = twitterCredentials.ConsumerKey,
                 ClientToken = twitterCredentials.AccessToken,
