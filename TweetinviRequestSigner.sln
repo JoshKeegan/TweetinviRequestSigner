@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetinviRequestSigner", "TweetinviRequestSigner\TweetinviRequestSigner.csproj", "{BE663881-55BE-4A30-8141-CE6A42624796}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetinviRequestSignerClient", "TweetinviRequestSignerClient\TweetinviRequestSignerClient.csproj", "{C5BFA0AD-7507-4449-B0B2-18647F8B7E5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetinviRequestSignerDemo", "TweetinviRequestSignerDemo\TweetinviRequestSignerDemo.csproj", "{40362C35-DCF9-4CB7-AD7E-7FDFCB486FC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetinviRequestSignerCommon", "TweetinviRequestSignerCommon\TweetinviRequestSignerCommon.csproj", "{228462F6-8DD5-4CAF-ACAC-246231D472D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{BE663881-55BE-4A30-8141-CE6A42624796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE663881-55BE-4A30-8141-CE6A42624796}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE663881-55BE-4A30-8141-CE6A42624796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5BFA0AD-7507-4449-B0B2-18647F8B7E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5BFA0AD-7507-4449-B0B2-18647F8B7E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5BFA0AD-7507-4449-B0B2-18647F8B7E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5BFA0AD-7507-4449-B0B2-18647F8B7E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40362C35-DCF9-4CB7-AD7E-7FDFCB486FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40362C35-DCF9-4CB7-AD7E-7FDFCB486FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40362C35-DCF9-4CB7-AD7E-7FDFCB486FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40362C35-DCF9-4CB7-AD7E-7FDFCB486FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228462F6-8DD5-4CAF-ACAC-246231D472D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228462F6-8DD5-4CAF-ACAC-246231D472D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228462F6-8DD5-4CAF-ACAC-246231D472D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228462F6-8DD5-4CAF-ACAC-246231D472D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
